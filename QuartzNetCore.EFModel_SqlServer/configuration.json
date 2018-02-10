@@ -1,0 +1,3 @@
+﻿{
+  "connStr": "Data Source=.; Initial Catalog=QuartzManager; Persist Security Info=True; User ID=sa; Password=123456;"
+}

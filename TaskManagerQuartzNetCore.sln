@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuartzNetCore.RemoteServer", "QuartzNetCore.RemoteServer\QuartzNetCore.RemoteServer.csproj", "{D57F50AD-22B0-44A7-AC15-BDA69285C921}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuartzNetCore.EFModel_SqlServer", "QuartzNetCore.EFModel_SqlServer\QuartzNetCore.EFModel_SqlServer.csproj", "{F952413A-9E2E-45FA-B2AF-05E4146BE900}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D57F50AD-22B0-44A7-AC15-BDA69285C921}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D57F50AD-22B0-44A7-AC15-BDA69285C921}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D57F50AD-22B0-44A7-AC15-BDA69285C921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F952413A-9E2E-45FA-B2AF-05E4146BE900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F952413A-9E2E-45FA-B2AF-05E4146BE900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F952413A-9E2E-45FA-B2AF-05E4146BE900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F952413A-9E2E-45FA-B2AF-05E4146BE900}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
