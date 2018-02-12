@@ -13,4 +13,9 @@
     <PackageReference Include="quartz" Version="3.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\QuartzNetCore.EFModel_SqlServer\QuartzNetCore.EFModel_SqlServer.csproj" />
+    <ProjectReference Include="..\QuartzNetCore.Repository\QuartzNetCore.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
