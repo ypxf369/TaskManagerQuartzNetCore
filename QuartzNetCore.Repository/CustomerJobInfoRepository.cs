@@ -24,6 +24,7 @@ namespace QuartzNetCore.Repository
             var customerJobInfo = new CustomerJobInfo
             {
                 CreateTime = DateTime.Now,
+                JobStartTime = DateTime.Now,
                 Cron = cron,
                 Description = jobDescription,
                 JobGroupName = jobGroupName,
@@ -47,8 +48,10 @@ namespace QuartzNetCore.Repository
             var cstmJobInfos = _dbContext.CustomerJobInfo.Where(whereLambda);
             totalCount = await cstmJobInfos.CountAsync();
             var data = isAsc
-                ? cstmJobInfos.OrderBy(orderByLambda).Skip((pageIndex - 1) * pageSize).Take(pageSize)
-                : cstmJobInfos.OrderByDescending(orderByLambda).Skip((pageIndex - 1) * pageSize).Take(pageSize);
+                //? cstmJobInfos.OrderBy(orderByLambda).Skip((pageIndex - 1) * pageSize).Take(pageSize)
+                //: cstmJobInfos.OrderByDescending(orderByLambda).Skip((pageIndex - 1) * pageSize).Take(pageSize);
+                ? cstmJobInfos.OrderBy(orderByLambda)
+                : cstmJobInfos.OrderByDescending(orderByLambda);
             return await Task.FromResult(new Tuple<IQueryable<CustomerJobInfo>, int>(data, totalCount));
         }
 

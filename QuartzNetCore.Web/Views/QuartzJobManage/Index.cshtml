@@ -329,8 +329,9 @@
     function getJobList(jobStatus, pageIndex, pageSize) {
         var _self = this;
         $.get('/QuartzJobManage/GetJobList', { jobStatus: jobStatus, pageIndex: pageIndex, pageSize: pageSize }, function (data) {
-            _self.jobs = data.Data.JobList;
-            _self.totalCount = data.Data.TotalCount;
+            console.log(data);
+            _self.jobs = data.data.jobList;
+            _self.totalCount = data.data.totalCount;
             _self.jobStatus = jobStatus;
         });
     };

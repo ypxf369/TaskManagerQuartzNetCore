@@ -121,6 +121,7 @@ namespace QuartzNetCore.Web.Controllers
         /// </summary>
         /// <param name="jobId">任务编号</param>
         /// <returns></returns>
+        [HttpPost]
         public async Task<JsonResult> ResumeJob(int jobId)
         {
             var ajaxResponseData = OperateJobAsync(jobId, jobDetail =>
@@ -132,6 +133,14 @@ namespace QuartzNetCore.Web.Controllers
             return await Task.FromResult(Json(ajaxResponseData));
         }
 
+        /// <summary>
+        /// 获取任务
+        /// </summary>
+        /// <param name="jobStatus">任务状态</param>
+        /// <param name="pageIndex">当前页</param>
+        /// <param name="pageSize">每页数据条数</param>
+        /// <returns></returns>
+        [HttpGet]
         public async Task<JsonResult> GetJobList(int jobStatus, int pageIndex, int pageSize)
         {
             var jobQueryable = await _customerJobInfoRepository.LoadCustomerInfoesAsync(i => i.TriggerState == jobStatus,
@@ -151,7 +160,7 @@ namespace QuartzNetCore.Web.Controllers
                 i.Exception
             }).ToList();
             var
-            ajaxResponseData = ResponseDataFactory.CreateAjaxResponseData("1", "获取成功", new { jobList, TotalCount = jobQueryable.Item2 });
+            ajaxResponseData = ResponseDataFactory.CreateAjaxResponseData("1", "获取成功", new { JobList = jobList, TotalCount = jobQueryable.Item2 });
             return await Task.FromResult(Json(ajaxResponseData));
         }
 
