@@ -32,9 +32,10 @@ namespace QuartzNetCore.RemoteServer
             properties["quartz.jobStore.tablePrefix"] = "Qrtz_";//表名前缀
             properties["quartz.jobStore.driverDelegateType"] = "Quartz.Impl.AdoJobStore.SqlServerDelegate, Quartz";//驱动类型
             properties["quartz.jobStore.dataSource"] = "myDS";//数据源名称
-            properties["quartz.dataSource.myDS.connectionString"] = @"Data Source=.;Initial Catalog=QuartzManager;User ID=sa;Password=123456";//连接字符串
-            properties["quartz.dataSource.myDS.provider"] = "SqlServer-20";//数据库版本
+            properties["quartz.jobStore.dataSource.myDS.connectionString"] = @"Data Source=.;Initial Catalog=QuartzManager;User ID=sa;Password=123456";//连接字符串
+            properties["quartz.jobStore.dataSource.myDS.provider"] = "SqlServer-20";//数据库版本
             properties["quartz.scheduler.instanceId"] = "AUTO";
+            properties["quartz.serializer.type"] = "binary";
             var schedulerFactory = new StdSchedulerFactory(properties);
             var scheduler = schedulerFactory.GetScheduler().Result;
             scheduler.ListenerManager.AddJobListener(new QuartzJobListener(), GroupMatcher<JobKey>.AnyGroup());

@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuartzNetCore.IRepository",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuartzNetCore.Repository", "QuartzNetCore.Repository\QuartzNetCore.Repository.csproj", "{7C86BA0C-9F98-459B-BF80-0BF9782AD41C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuartzNetCore.Web", "QuartzNetCore.Web\QuartzNetCore.Web.csproj", "{72040321-0A38-4AE1-9404-477CBFC29AE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuartzNetCore.JobBase", "QuartzNetCore.JobBase\QuartzNetCore.JobBase.csproj", "{49E6D6F3-D360-4527-B80E-4865B4B37880}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{7C86BA0C-9F98-459B-BF80-0BF9782AD41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C86BA0C-9F98-459B-BF80-0BF9782AD41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C86BA0C-9F98-459B-BF80-0BF9782AD41C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72040321-0A38-4AE1-9404-477CBFC29AE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72040321-0A38-4AE1-9404-477CBFC29AE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72040321-0A38-4AE1-9404-477CBFC29AE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72040321-0A38-4AE1-9404-477CBFC29AE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49E6D6F3-D360-4527-B80E-4865B4B37880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E6D6F3-D360-4527-B80E-4865B4B37880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E6D6F3-D360-4527-B80E-4865B4B37880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E6D6F3-D360-4527-B80E-4865B4B37880}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

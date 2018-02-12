@@ -11,8 +11,7 @@ using QuartzNetCore.IRepository;
 
 namespace QuartzNetCore.Repository
 {
-    [Export(nameof(CustomerJobInfoRepository), typeof(ICustomerJobInfoRepository))]
-    internal class CustomerJobInfoRepository : ICustomerJobInfoRepository
+    public class CustomerJobInfoRepository : ICustomerJobInfoRepository
     {
         private readonly QuartzManagerContext _dbContext;
 
@@ -42,7 +41,7 @@ namespace QuartzNetCore.Repository
             return model.Entity.Id;
         }
 
-        public async Task<Tuple<IQueryable<CustomerJobInfo>, int>> LoadCustomerInfoes<T>(Expression<Func<CustomerJobInfo, bool>> whereLambda, Expression<Func<CustomerJobInfo, T>> orderByLambda, bool isAsc, int pageIndex, int pageSize)
+        public async Task<Tuple<IQueryable<CustomerJobInfo>, int>> LoadCustomerInfoesAsync<T>(Expression<Func<CustomerJobInfo, bool>> whereLambda, Expression<Func<CustomerJobInfo, T>> orderByLambda, bool isAsc, int pageIndex, int pageSize)
         {
             int totalCount;
             var cstmJobInfos = _dbContext.CustomerJobInfo.Where(whereLambda);
@@ -53,7 +52,7 @@ namespace QuartzNetCore.Repository
             return await Task.FromResult(new Tuple<IQueryable<CustomerJobInfo>, int>(data, totalCount));
         }
 
-        public async Task<int> UpdateCustomerJobInfo(CustomerJobInfo customerJobInfo)
+        public async Task<int> UpdateCustomerJobInfoAsync(CustomerJobInfo customerJobInfo)
         {
             await _dbContext.SaveChangesAsync();
             return customerJobInfo.Id;

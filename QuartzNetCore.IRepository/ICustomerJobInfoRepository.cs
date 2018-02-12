@@ -29,7 +29,7 @@ namespace QuartzNetCore.IRepository
         /// </summary>
         /// <param name="customerJobInfo">任务model</param>
         /// <returns>任务编号</returns>
-        Task<int> UpdateCustomerJobInfo(CustomerJobInfo customerJobInfo);
+        Task<int> UpdateCustomerJobInfoAsync(CustomerJobInfo customerJobInfo);
 
         /// <summary>
         /// 加载任务列表
@@ -41,7 +41,7 @@ namespace QuartzNetCore.IRepository
         /// <param name="pageIndex">当前页</param>
         /// <param name="pageSize">每页数据条数</param>
         /// <returns>数据集合</returns>
-        Task<Tuple<IQueryable<CustomerJobInfo>, int>> LoadCustomerInfoes<T>(
+        Task<Tuple<IQueryable<CustomerJobInfo>, int>> LoadCustomerInfoesAsync<T>(
             Expression<Func<CustomerJobInfo, bool>> whereLambda, Expression<Func<CustomerJobInfo, T>> orderByLambda,
             bool isAsc, int pageIndex, int pageSize);
 
